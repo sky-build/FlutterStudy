@@ -36,3 +36,7 @@
 
 ## Drawer
 - Drawer 클래스는 안드로이드 좌측상단버튼을 클릭하면 나타나는 화면을 의미한다.
+
+## Container 위젯
+- Container 위젯은 child가 없을 경우, 가능한 가장 큰 공간을 차지하려고 한다.
+- Container가 child 위젯을 가질 경우 Container 위젯은 child위젯의 크기로 변경된다.
