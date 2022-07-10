@@ -21,3 +21,6 @@ Flutter를 공부하면서 배운것을 정리합니다.
 - [NullSafety](#nullsafety.md)
 - [WidgetLifecycle](#widgetlifecycle.md)
 - [StreamBuilder](#streambuilder.md)
+
+## 라이브러리
+- [GetX](#getx.md)
