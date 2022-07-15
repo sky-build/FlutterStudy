@@ -20,6 +20,12 @@
             return Text('${controller.count.value}');
         },
     ),
+
+    Controller controller = Get.put(Controller());
+    Controller controller = Get.find();
+    final controller = Get.find<Controller>();
+    // GetX에서 선호되는 방식
+    Obx(() => Text('${controller.count.value}'));
     ```
 
 ## 종속성 관리
