@@ -39,8 +39,8 @@
     ```
 - Bloc 클래스
     ```Dart
-    class TextfieldBlocBloc extends Bloc<TextfieldBlocEvent, TextBloc> {
-        TextfieldBlocBloc() : super(TextBloc()) {
+    class TextfieldBloc extends Bloc<TextfieldBlocEvent, TextBloc> {
+        TextfieldBloc() : super(TextBloc()) {
             // TextField가 변경되었을 때
             on<TextfieldBlocChange>((event, emit) {
                 state.updateText(event.text);
@@ -51,4 +51,27 @@
             });
         }
     }
+    ```
+- Widget에 적용
+    ```Dart
+    // BlocProvider를 사용해 하위 위젯에서 Bloc을 사용할 수 있도록 설정
+    BlocProvider(
+        create: (_) => TextfieldBloc(),
+        child: MaterialApp(....);
+
+    // 위젯에 전송
+    TextField(
+    // 변경사항을 State에 업데이트
+    // state.updateText() 함수 실행
+    onChanged: ((value) => context
+        .read<TextfieldBloc>()
+        .add(TextfieldBlocChange(value))),
+    ),
+    ElevatedButton(
+        onPressed: () {
+            // 현재 TextField값을 출력
+            context.read<TextfieldBloc>().add(TextFieldButtonClicked());
+        },
+        child: const Text('버튼'),
+    ),
     ```
